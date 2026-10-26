@@ -1,0 +1,77 @@
+:root {
+  --bg:      #f0f4ff;
+  --surface: #ffffff;
+  --border:  rgba(0, 0, 0, 0.08);
+  --fg:      #111827;
+  --muted:   rgba(17, 24, 39, 0.6);
+  --accent:  #2563eb;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:      #0a0e1a;
+    --surface: #131828;
+    --border:  rgba(255, 255, 255, 0.08);
+    --fg:      #e8ecf4;
+    --muted:   rgba(232, 236, 244, 0.6);
+    --accent:  #60a5fa;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 40px 16px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+.page { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+.hero { display: flex; align-items: center; gap: 18px; }
+.icon {
+  width: 64px; height: 64px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; border-radius: 15px;
+  background: linear-gradient(135deg, #1d3a8a, #2563eb);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+}
+h1 { margin: 0; font-size: 26px; letter-spacing: -0.3px; }
+.sub { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+.card h2 { margin: 0 0 10px; font-size: 18px; }
+.card p { margin: 0 0 10px; }
+.card p:last-child { margin-bottom: 0; }
+.card ul { margin: 0 0 10px; padding-left: 20px; }
+.card li { margin-bottom: 4px; }
+
+a { color: var(--accent); }
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.hint { font-size: 14px; color: var(--muted); }
+
+details { border-top: 1px solid var(--border); padding: 12px 0; }
+details:last-child { padding-bottom: 0; }
+summary { cursor: pointer; font-weight: 600; }
+details p, details ul { margin-top: 8px; }
+
+footer {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  font-size: 14px; color: var(--muted); padding-top: 8px;
+}
